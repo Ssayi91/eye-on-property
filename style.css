@@ -920,6 +920,8 @@
             
             .mobile-menu-btn {
                 display: block;
+                padding: 10px;
+                color: var(--white)
             }
             
             .hero-buttons {
@@ -947,6 +949,12 @@
                 clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
             }
         }
+
+        @media (max-width: 600px) {
+            .logo-text {
+                font-size: 14px;  /* smaller size for phones */
+            }
+            }
         
         @media (max-width: 576px) {
             .section {
