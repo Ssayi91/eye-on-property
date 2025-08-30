@@ -18,6 +18,34 @@
                 header.classList.remove('scrolled');
             }
         });
+
+          // Add subtle animation to process steps
+        document.addEventListener('DOMContentLoaded', function() {
+            const processSteps = document.querySelectorAll('.process-step');
+            
+            processSteps.forEach((step, index) => {
+                // Add delay based on index for staggered animation
+                step.style.animationDelay = `${index * 0.1}s`;
+                step.classList.add('fade-in');
+            });
+        });
+         // Add subtle animation to process steps
+        document.addEventListener('DOMContentLoaded', function() {
+            const processSteps = document.querySelectorAll('.process-step');
+            
+            processSteps.forEach((step, index) => {
+                // Add delay based on index for staggered animation
+                step.style.transitionDelay = `${index * 0.05}s`;
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateY(0)';
+                }, 300);
+            });
+        });
         
         // FAQ Accordion
         const accordionHeaders = document.querySelectorAll('.accordion-header');

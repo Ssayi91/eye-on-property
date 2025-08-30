@@ -197,7 +197,7 @@
         /* Hero Section with Clip-Path */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.432)), url('./uploads/interlocking\ banner.jpeg') no-repeat center center/cover;
+            background: url('./uploads/interlocking\ bricksssss.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -496,6 +496,162 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+        }
+
+   .design-process-container {
+            width: 100%;
+            padding: 40px 40px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            color: var(--black);
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+        }
+        
+        /* Design Process Section */
+        .design-process {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: 40px;
+        }
+        
+        /* Connector line */
+        .design-process:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold), var(--brown));
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            width: calc(100% / 8 - 20px);
+            min-width: 100px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--brown) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+        
+        .step-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .process-step {
+                width: calc(100% / 4 - 20px);
+                margin-bottom: 40px;
+            }
+            
+            .design-process:before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .process-step {
+                width: calc(100% / 2 - 20px);
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .design-process {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 35px;
+            }
+            
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
         }
         
         /* Reels Section */
