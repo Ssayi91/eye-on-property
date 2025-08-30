@@ -197,7 +197,8 @@
         /* Hero Section with Clip-Path */
         .hero {
             height: 100vh;
-            background: url('./uploads/interlocking\ bricksssss.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(7, 7, 7, 0.473), rgba(3, 3, 3, 0.438)),
+                        url('./uploads/final\ banner.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             text-align: center;
@@ -222,11 +223,20 @@
             letter-spacing: 2px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
+
+        .hero h1 span{
+            color: var(--gold);
+        }
         
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 40px;
-            font-weight: 300;
+            font-weight: 600;
+            color: var(--white);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.774);
+        }
+        .hero p span{
+            color: var(--gold);
         }
         
         .hero-buttons {
@@ -1050,7 +1060,12 @@
             color: var(--gold);
             margin-top: 5px;
         }
-        
+        #contacts h2{
+            color: white;
+        }
+        #contacts p{
+            color: white;
+        }
         .social-links {
             display: flex;
             gap: 18px;
