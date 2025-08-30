@@ -47,15 +47,30 @@
             });
         });
         
-        // FAQ Accordion
+       // FAQ Accordion
         const accordionHeaders = document.querySelectorAll('.accordion-header');
         
         accordionHeaders.forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
-                content.classList.toggle('active');
-                header.querySelector('i').classList.toggle('fa-chevron-down');
-                header.querySelector('i').classList.toggle('fa-chevron-up');
+                const isActive = content.classList.contains('active');
+                
+                // Close all accordions first
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                document.querySelectorAll('.accordion-header i').forEach(icon => {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                });
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    content.classList.add('active');
+                    header.querySelector('i').classList.remove('fa-chevron-down');
+                    header.querySelector('i').classList.add('fa-chevron-up');
+                }
             });
         });
         
@@ -70,8 +85,26 @@
                 // Add active class to clicked tab
                 tab.classList.add('active');
                 
-                // Here you would typically filter FAQs based on category
-                // For this example, we're just toggling the active class
+                // Get the category to show
+                const category = tab.getAttribute('data-category');
+                
+                // Hide all FAQ categories
+                document.querySelectorAll('.faq-category').forEach(item => {
+                    item.style.display = 'none';
+                });
+                
+                // Show the selected category
+                document.querySelector(`.faq-category[data-category="${category}"]`).style.display = 'block';
+                
+                // Close all accordions when switching tabs
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                document.querySelectorAll('.accordion-header i').forEach(icon => {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                });
             });
         });
         
@@ -98,4 +131,52 @@
                 }
             });
         });
+         // Number counting animation
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Intersection Observer to trigger animation when section is in view
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = +entry.target.getAttribute('data-target');
+                        animateValue(entry.target, 0, target, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(number => {
+                observer.observe(number);
+            });
+        });
+
+         // This script ensures the iframes maintain aspect ratio on resize
+        function adjustReelHeights() {
+            const reelItems = document.querySelectorAll('.reel-item');
+            reelItems.forEach(item => {
+                const width = item.offsetWidth;
+                item.style.height = width * 1.25 + 'px'; // 5:4 aspect ratio
+            });
+        }
+        
+        // Initial adjustment
+        window.addEventListener('load', adjustReelHeights);
+        
+        // Adjust on window resize
+        window.addEventListener('resize', adjustReelHeights);
   
