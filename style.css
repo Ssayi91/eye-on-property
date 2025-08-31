@@ -197,7 +197,7 @@
         /* Hero Section with Clip-Path */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(7, 7, 7, 0.473), rgba(3, 3, 3, 0.438)),
+            background: linear-gradient(rgba(7, 7, 7, 0), rgba(3, 3, 3, 0.575)),
                         url('./uploads/final\ banner.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -819,8 +819,8 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: #000;
-            aspect-ratio: 9/16;
-            max-width: 300px;
+            /* aspect-ratio: 9/16;
+            max-width: 300px; */
             margin: 0 auto;
         }
         
