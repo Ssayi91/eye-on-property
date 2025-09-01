@@ -179,4 +179,24 @@
         
         // Adjust on window resize
         window.addEventListener('resize', adjustReelHeights);
-  
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `New Message from Website Contact Form%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ASubject: ${encodeURIComponent(subject)}%0AMessage: ${encodeURIComponent(message)}`;
+    
+    // Create WhatsApp URL (using wa.me format)
+    const whatsappURL = `https://wa.me/254724926397?text=${whatsappMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Optional: Reset the form after submission
+    event.target.reset();
+}

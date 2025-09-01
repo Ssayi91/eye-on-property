@@ -70,10 +70,10 @@
                 </div>
                 <div class="property-gallery">
                     <div class="gallery-item">
-                        <img src="./uploads/residential aparts.jpg" alt="Apartment Building">
+                        <img src="./uploads/prpty 1.jpg" alt="flatroof" >
                     </div>
                     <div class="gallery-item">
-                        <img src="./uploads/white brick.webp" alt="Modern House">
+                        <img src="./uploads/prpty 2.jpg" alt="Modern House">
                     </div>
                     <div class="gallery-item">
                         <img src="./uploads/bungalow design.jpg" alt="House Interior">
@@ -107,16 +107,16 @@
             <div class="design-content">
                 <div class="design-gallery">
                     <div class="gallery-item">
-                        <img src="./uploads/living room design 1.jpg" alt="Modern Interior">
+                        <img src="./uploads/int 1.jpg" alt="Modern Interior">
                     </div>
                     <div class="gallery-item">
-                        <img src="./uploads/interior kitchen.jpg" alt="Living Room">
+                        <img src="./uploads/int 2.jpg" alt="Living Room">
                     </div>
                     <div class="gallery-item">
-                        <img src="./uploads/interior business.jpg" alt="Bedroom Design">
+                        <img src="./uploads/int 3.jpg" alt="Bedroom Design">
                     </div>
                     <div class="gallery-item">
-                        <img src="./uploads/interior bedroom.jpg" alt="Kitchen Design">
+                        <img src="./uploads/int 4.jpg" alt="Kitchen Design">
                     </div>
                 </div>
                 <div class="design-info">
@@ -245,7 +245,7 @@
         <!-- Reel 1 -->
         <div class="reel-item">
             <iframe 
-                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F514326518146078%2F&show_text=false&width=267&t=0" 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1429940288281127%2F&show_text=false&width=267&t=0"
                 class="reel-embed"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
                 allowFullScreen>
@@ -268,7 +268,7 @@
         <!-- Reel 2 -->
         <div class="reel-item">
             <iframe 
-                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F920606669911910%2F&show_text=false&width=267&t=0" 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F720216814212937%2F&show_text=false&width=267&t=0"
                 class="reel-embed"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
                 allowFullScreen>
@@ -291,7 +291,7 @@
         <!-- Reel 3 -->
         <div class="reel-item">
             <iframe 
-                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1811679732766380%2F&show_text=false&width=267&t=0" 
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F695385446126362%2F&show_text=false&width=267&t=0"
                 class="reel-embed"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
                 allowFullScreen>
@@ -519,27 +519,28 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send us a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="What is this regarding?">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="How can we help you?"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                        <h3>Send us a Message</h3>
+                        <form onsubmit="sendToWhatsApp(event)">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="What is this regarding?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
                 </div>
+
             </div>
         </div>
     </section>
